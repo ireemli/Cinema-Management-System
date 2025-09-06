@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ManagerMenuController">
+   <children>
+      <BorderPane>
+         <center>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+               <children>
+                  <Label layoutX="116.0" layoutY="29.0" prefHeight="41.0" prefWidth="368.0" text="Welcome to Manager Menu" textAlignment="CENTER">
+                     <font>
+                        <Font name="Helvetica Bold" size="28.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="159.0" layoutY="82.0" prefHeight="9.0" prefWidth="282.0" text="Choose an action to perform">
+                     <font>
+                        <Font name="Helvetica Neue" size="16.0" />
+                     </font>
+                  </Label>
+                  <HBox layoutX="10.0" layoutY="138.0" prefHeight="252.0" prefWidth="585.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="138.0">
+                     <children>
+                        <AnchorPane prefHeight="231.0" prefWidth="573.0">
+                           <HBox.margin>
+                              <Insets bottom="10.0" />
+                           </HBox.margin>
+                           <children>
+                              <HBox layoutY="-17.0" prefHeight="191.0" prefWidth="573.0" spacing="10.0">
+                                 <children>
+                                    <VBox alignment="CENTER" fillWidth="false" prefHeight="219.0" prefWidth="150.0" spacing="1.0" style="-fx-border-color: gray;">
+                                       <children>
+                                          <Label alignment="CENTER" text="View the Inventory  &#10;&amp; Change the Stocks&#10;&#10;&#10;&#10;" textAlignment="CENTER">
+                                             <font>
+                                                <Font name="Helvetica Neue" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Button fx:id="InventoryAction" mnemonicParsing="false" onAction="#ViewInventoryButton" style="-fx-background-color: pink;" text="Click" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="150.0" style="-fx-border-color: gray;">
+                                       <children>
+                                          <Label alignment="CENTER" text="Personnel Actions&#10;&#10;&#10;&#10;&#10;" textAlignment="CENTER">
+                                             <font>
+                                                <Font name="Helvetica Neue" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Button fx:id="PersonnelAction" mnemonicParsing="false" onAction="#PersonnelActionsMenuButton" style="-fx-background-color: pink;" text="Click" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="150.0" style="-fx-border-color: gray;">
+                                       <children>
+                                          <Label alignment="CENTER" text="View the Prices&#10;&#10;&#10;&#10;&#10;" textAlignment="CENTER">
+                                             <font>
+                                                <Font name="Helvetica Neue" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Button fx:id="PriceAction" mnemonicParsing="false" onAction="#PriceMenuButton" style="-fx-background-color: pink;" text="Click" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="150.0" style="-fx-border-color: gray;">
+                                       <children>
+                                          <Label alignment="CENTER" text="Review the Revenue&#10;&amp; Taxes&#10;&#10;&#10;&#10;" textAlignment="CENTER">
+                                             <font>
+                                                <Font name="Helvetica Neue" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Button fx:id="RevenueAction" mnemonicParsing="false" onAction="#ReviewMenuButton" style="-fx-background-color: pink;" text="Click" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </center>
+         <top>
+            <HBox fx:id="topBar" alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" style="-fx-background-color: #2c3e50;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="userInfoLabel" style="-fx-text-fill: white;" text="Manager: [Username]">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                  <Button fx:id="Logout" mnemonicParsing="false" onAction="#handleLogoutAction" style="-fx-background-color: #e74c3c; -fx-text-fill: white;" text="Logout" />
+               </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </HBox>
+         </top>
+      </BorderPane>
+   </children>
+</VBox>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MonthlySchedulesController">
+   <children>
+      <BorderPane>
+         <center>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+               <children>
+                  <TableView fx:id="schedulesTable" layoutX="17.0" layoutY="62.0" prefHeight="140.0" prefWidth="566.0">
+                    <columns>
+                      <TableColumn fx:id="dateScheduleTable" prefWidth="137.0" text="Date" />
+                      <TableColumn fx:id="hallScheduleTable" prefWidth="126.0" text="Hall" />
+                        <TableColumn fx:id="sessionScheduleTable" prefWidth="132.0" text="Session" />
+                        <TableColumn fx:id="movieScheduleTable" prefWidth="170.0" text="Movie" />
+                    </columns>
+                  </TableView>
+                  <Text layoutX="62.0" layoutY="44.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Create and Update Monthly Schedules" textAlignment="CENTER" wrappingWidth="476.9830722808838">
+                     <font>
+                        <Font name="Adelle Sans Devanagari Semibold" size="25.0" />
+                     </font>
+                  </Text>
+                  <VBox layoutX="17.0" layoutY="227.0" prefHeight="122.0" prefWidth="201.0" spacing="3.0">
+                     <padding>
+                        <Insets bottom="3.0" />
+                     </padding>
+                     <children>
+                        <HBox prefHeight="26.0" prefWidth="196.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Date" textAlignment="CENTER" wrappingWidth="96.68997192382812">
+                                 <font>
+                                    <Font name="Adelle Sans Devanagari Regular" size="15.0" />
+                                 </font>
+                              </Text>
+                              <DatePicker fx:id="ScheduleDateChoice" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="26.0" prefWidth="196.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Hall" textAlignment="CENTER" wrappingWidth="96.68997192382812">
+                                 <font>
+                                    <Font name="Adelle Sans Devanagari Regular" size="15.0" />
+                                 </font>
+                              </Text>
+                              <ChoiceBox fx:id="ScheduleHallChoice" prefWidth="150.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="26.0" prefWidth="196.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Session" textAlignment="CENTER" wrappingWidth="96.68997192382812">
+                                 <font>
+                                    <Font name="Adelle Sans Devanagari Regular" size="15.0" />
+                                 </font>
+                              </Text>
+                              <ChoiceBox fx:id="ScheduleSessionChoice" prefWidth="150.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="26.0" prefWidth="196.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Movie" textAlignment="CENTER" wrappingWidth="96.68997192382812">
+                                 <font>
+                                    <Font name="Adelle Sans Devanagari Regular" size="15.0" />
+                                 </font>
+                              </Text>
+                              <ChoiceBox fx:id="ScheduleMovieChoice" prefWidth="150.0" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <Button fx:id="createSchedulesButton" layoutX="485.0" layoutY="266.0" mnemonicParsing="false" onAction="#handleCreateButton" prefHeight="15.0" prefWidth="64.0" style="-fx-background-color: #8ca87c;" text="Create" />
+                  <Button fx:id="backFromSchedules" layoutX="404.0" layoutY="353.0" mnemonicParsing="false" onAction="#handleBackButton" style="-fx-background-color: #6c757d;" text="Back" textFill="WHITE" />
+                  <Pane layoutX="293.0" layoutY="316.0" opacity="0.43" prefHeight="6.0" prefWidth="270.0" style="-fx-background-color: #939089;" />
+                  <Text layoutX="300.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pick a column to update" textAlignment="CENTER" wrappingWidth="179.68997192382812">
+                     <font>
+                        <Font name="Adelle Sans Devanagari Regular" size="15.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="updateSchedulesButton" layoutX="485.0" layoutY="224.0" mnemonicParsing="false" onAction="#handleUpdateButton" style="-fx-background-color: #8ca87c;" text="Update" />
+                  <Text layoutX="301.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter all values to create" textAlignment="CENTER" wrappingWidth="179.68997192382812">
+                     <font>
+                        <Font name="Adelle Sans Devanagari Regular" size="15.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+         </center>
+         <top>
+            <HBox fx:id="topBar" alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" style="-fx-background-color: #2c3e50;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="userInfoLabel" style="-fx-text-fill: white;" text="Admin: [Username]">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                  <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#handleLogoutButton" style="-fx-background-color: #e74c3c; -fx-text-fill: white;" text="Logout" />
+               </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </HBox>
+         </top>
+      </BorderPane>
+   </children>
+</VBox>
